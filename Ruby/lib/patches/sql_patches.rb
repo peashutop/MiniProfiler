@@ -151,7 +151,7 @@ if SqlPatches.class_exists? "PG::Result"
       Rails.logger.info "******** is result frozen? #{result.frozen?} **********\n"
 
       the_thing_getting_assigned = ::Rack::MiniProfiler.record_sql(mapped, elapsed_time)
-      Rails.logger.info "******** #{the_thing_getting_assigned.inspect} **********\n"
+      Rails.logger.info "******** @miniprofiler_sql_id: #{the_thing_getting_assigned.inspect} **********\n"
 
       #the following seems to be crashing:
       result.instance_variable_set("@miniprofiler_sql_id", the_thing_getting_assigned)
